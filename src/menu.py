@@ -26,8 +26,21 @@ def menu_loop(screen, clock):
         )
         buttons.append((rect, text))
 
-    background = pygame.image.load("assets/images/background_.jpg").convert()
-    background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+    background = pygame.image.load("assets/images/wtc.png").convert()
+    # Garder les proportions de l'image originale et centrer
+    bg_width, bg_height = background.get_size()
+    scale = min(WIDTH / bg_width, HEIGHT / bg_height)
+    new_width = int(bg_width * scale)
+    new_height = int(bg_height * scale)
+    background = pygame.transform.scale(background, (new_width, new_height))
+    
+    # Créer une surface de fond et centrer l'image
+    background_surface = pygame.Surface((WIDTH, HEIGHT))
+    background_surface.fill((135, 206, 235))  # Couleur de fond bleu ciel
+    x_offset = (WIDTH - new_width) // 2
+    y_offset = (HEIGHT - new_height) // 2
+    background_surface.blit(background, (x_offset, y_offset))
+    background = background_surface
 
     while True:
         for event in pygame.event.get():
