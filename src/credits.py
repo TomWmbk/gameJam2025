@@ -8,7 +8,7 @@ def draw_center(surface, text, font, color, y):
     surface.blit(ts, tr)
 
 def credits_loop(screen, clock):
-    bg = pygame.image.load("assets/images/background_.jpg").convert()
+    bg = pygame.image.load("assets/images/wtc.png").convert()
     bg = pygame.transform.scale(bg, (WIDTH, HEIGHT))
 
     font_title = pygame.font.Font("assets/fonts/Pixellari.ttf", 36)
@@ -43,7 +43,7 @@ def credits_loop(screen, clock):
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit(); sys.exit()
+                return "quit"
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 return "back"
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:

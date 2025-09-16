@@ -15,9 +15,13 @@ def main():
         choice = menu_loop(screen, clock)
 
         if choice == "jouer":
-            game_loop(screen, clock)
+            result = game_loop(screen, clock)
+            if result == "quit":
+                break
         elif choice in ("crédits", "credits"):
-            credits_loop(screen, clock)   
+            result = credits_loop(screen, clock)
+            if result == "quit":
+                break
         elif choice in ("options",):
             pass
         elif choice in ("quit", "quitter"):
