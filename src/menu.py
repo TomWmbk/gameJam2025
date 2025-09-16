@@ -26,7 +26,7 @@ def menu_loop(screen, clock):
         )
         buttons.append((rect, text))
 
-    background = pygame.image.load("assets/images/background_.jpg").convert()
+    background = pygame.image.load("assets/images/wtc.png").convert()
     background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
     while True:
@@ -37,9 +37,6 @@ def menu_loop(screen, clock):
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 for rect, text in buttons:
                     if rect.collidepoint(event.pos):
-                        if text.lower() == "quitter":  # ✅ ferme direct si bouton Quitter
-                            pygame.quit()
-                            sys.exit()
                         return text.lower()
 
         screen.blit(background, (0, 0))

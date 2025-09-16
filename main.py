@@ -7,7 +7,7 @@ from src.credits import credits_loop   # ⬅️ ajout
 
 def main():
     pygame.init()
-    pygame.display.set_caption("The Horse")
+    pygame.display.set_caption("A day at the office")
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()
 
